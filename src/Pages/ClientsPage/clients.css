@@ -20,47 +20,47 @@ body {
     background-color: #f0f2f5;
 }
 
-.wrapper {
+#wrapper {
     display: flex;
 }
 
 
-.content {
+#content {
     flex: 1;
     margin-left: 270px;
     padding: 20px;
 }
 
-.header {
+#header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 20px;
 }
 
-.header h1 {
+#header h1 {
     color: var(--secondaryColor);
     font-size: 24px;
 }
 
-.search-filter-container {
+#search-filter-container {
     display: flex;
     gap: 20px;
     align-items: center;
 }
 
-.search {
+#search {
     display: flex;
     flex-direction: column;
     margin-bottom: 20px;
 }
 
-.search label {
+#search label {
     color: var(--secondaryColor);
     font-weight: bold;
 }
 
-.search input[type="text"] {
+#search input[type="text"] {
     max-width: 300px;
     padding: 5px;
     border: 1px solid var(--secondaryColor);
@@ -69,18 +69,18 @@ body {
     background-color: #fff;
 }
 
-.filter {
+#filter {
     display: flex;
     flex-direction: column;
     margin-bottom: 20px;
 }
 
-.filter label {
+#filter label {
     color: var(--secondaryColor);
     font-weight: bold;
 }
 
-.filter select {
+#filter select {
     max-width: 200px;
     padding: 5px;
     border: 1px solid var(--secondaryColor);
@@ -89,7 +89,7 @@ body {
     background-color: #fff;
 }
 
-.add-client-btn {
+#add-client-btn {
     margin-top: 10px;
     background-color: var(--secondaryColor);
     color: #fff;
@@ -100,14 +100,14 @@ body {
     font-size: 14px;
 }
 
-.client-list {
+#client-list {
     display: flex;
     flex-direction: column;
     list-style: none;
     padding: 0;
 }
 
-.client-list li {
+#client-list li {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -115,53 +115,53 @@ body {
     margin-bottom: 15px;
 }
 
-.client-info {
+#client-info {
     display: flex;
     align-items: center;
     gap: 10px;
 }
 
-.client-info .status {
+#client-info #status {
     width: 10px;
     height: 10px;
     border-radius: 50%;
 }
 
-.client-info .approved {
+#client-info #approved {
     background-color: green;
 }
 
-.client-info .not-approved {
+#client-info #not-approved {
     background-color: red;
 }
 
-.client-name {
+#client-name {
     color: var(--secondaryColor);
     font-size: 18px;
 }
 
 
 
-.client-actions {
+#client-actions {
     display: flex;
     gap: 10px;
 }
 
 
-.client-name {
+#client-name {
     color: var(--secondaryColor);
     font-size: 18px;
 }
 
-.loan-value {
+#loan-value {
     font-size: 16px;
 }
 
-.loan-value.value-approved {
+#loan-value#value-approved {
     color: #4caf50;
 }
 
-.change-status-btn {
+#change-status-btn {
     background-color: #e65100;
     color: #fff;
     padding: 5px 10px;
@@ -171,11 +171,11 @@ body {
     font-size: 14px;
 }
 
-.change-status-btn:hover {
+#change-status-btn:hover {
     background-color: #c04e00;
 }
 
-.view-details-btn {
+#view-details-btn {
     background-color: var(--primaryColor);
     color: #fff;
     padding: 5px 10px;
@@ -186,14 +186,14 @@ body {
 }
 
 /* Mini-Cards */
-.mini-cards {
+#mini-cards {
     display: flex;
     justify-content: space-between;
     gap: 20px;
     margin-bottom: 20px;
 }
 
-.mini-card {
+#mini-card {
     display: flex;
     flex-direction: column;
     padding: 10px;
@@ -204,13 +204,13 @@ body {
     align-items: center;
 }
 
-.mini-card h3 {
+#mini-card h3 {
     font-size: 16px;
     color: var(--secondaryColor);
     margin-bottom: 5px;
 }
 
-.mini-card p {
+#mini-card p {
     font-size: 20px;
     font-weight: bold;
     color: var(--primaryColor);
@@ -221,12 +221,12 @@ body {
 
  
 
-.wrapper-disabled {
+#wrapper-disabled {
     display: none;
 }
 
 /* Estilos para o botão "Enviar Lembrete" */
-.send-reminder-btn {
+#send-reminder-btn {
     background-color: #3498db;
     color: #fff;
     padding: 5px 16px;
@@ -236,21 +236,21 @@ body {
     transition: background-color 0.3s ease;
 }
 
-.send-reminder-btn:hover {
+#send-reminder-btn:hover {
     background-color: #2980b9;
 }
 
-.send-reminder-btn:focus {
+#send-reminder-btn:focus {
     outline: none;
 }
 
-.send-reminder-btn:active {
+#send-reminder-btn:active {
     background-color: #1c78a9;
 }
 
 
 /* Estilizando o botão desativado */
-.send-reminder-btn[disabled] {
+#send-reminder-btn[disabled] {
     opacity: 0.5;
     /* Reduz a opacidade do botão desativado */
     cursor: not-allowed;
@@ -260,7 +260,7 @@ body {
 
 /* Styling for the new modal */
 /* Estilo do Modal */
-.modal-change-status {
+#modal-change-status {
     display: none;
     position: fixed;
     top: 0;
@@ -272,7 +272,7 @@ body {
     /* Certifique-se de que o modal esteja acima de outros elementos */
 }
 
-.modal-change-status .modal-content {
+#modal-change-status #modal-content {
     background-color: #f8f8f8;
     padding: 30px;
     border-radius: 10px;
@@ -288,7 +288,7 @@ body {
     /* Define a largura do modal */
 }
 
-.modal-change-status .close {
+#modal-change-status #close {
     position: absolute;
     top: 10px;
     right: 10px;
@@ -298,12 +298,12 @@ body {
     /* Define a cor do ícone de fechar */
 }
 
-.modal-change-status h2 {
+#modal-change-status h2 {
     margin-top: 0;
     margin-bottom: 20px;
 }
 
-.status-options {
+#status-options {
     display: flex;
     justify-content: space-between;
     margin-bottom: 20px;
@@ -311,17 +311,17 @@ body {
 
 
 
-.loan-value-input {
+#loan-value-input {
     margin-top: 10px;
 }
 
-.loan-value-input label {
+#loan-value-input label {
     display: block;
     margin-bottom: 5px;
     font-size: 14px;
 }
 
-.loan-value-input input {
+#loan-value-input input {
     width: 100%;
     padding: 8px;
     border-radius: 5px;
@@ -330,9 +330,9 @@ body {
 }
 
 
-/* ... (código anterior) ... */
+/* ### (código anterior) ### */
 
-.status-option {
+#status-option {
     padding: 8px 20px;
     border-radius: 5px;
     background-color: #e65100;
@@ -343,32 +343,32 @@ body {
     color: #fff;
 }
 
-.status-option:hover {
+#status-option:hover {
     background-color: #c04e00;
     /* Altera a cor do botão ao passar o mouse */
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
     /* Adiciona uma sombra leve ao botão ao passar o mouse */
 }
 
-.status-option.approve {
+#status-option#approve {
     background-color: #4caf50;
     /* Cor de fundo para o botão "Aprovar" */
     color: #fff;
     /* Cor do texto para o botão "Aprovar" */
 }
 
-.status-option.not-approve {
+#status-option#not-approve {
     background-color: #f44336;
     /* Cor de fundo para o botão "Não Aprovar" */
     color: #fff;
     /* Cor do texto para o botão "Não Aprovar" */
 }
 
-/* Add this to your existing style.css file or create a new CSS file and link it in the HTML */
+/* Add this to your existing style#css file or create a new CSS file and link it in the HTML */
 
 /* Modal styles */
 
-.modal-send-reminder {
+#modal-send-reminder {
     display: none;
     position: fixed;
     top: 0;
@@ -379,7 +379,7 @@ body {
     z-index: 999;
 }
 
-.modal-content {
+#modal-content {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -392,7 +392,7 @@ body {
     width: 80%;
 }
 
-.close {
+#close {
     position: absolute;
     top: 10px;
     right: 10px;
@@ -401,33 +401,33 @@ body {
 }
 
 /* Reminder modal centering */
-.modal-send-reminder .modal-content {
+#modal-send-reminder #modal-content {
     width: 60%;
 }
 
-.reminder-options {
+#reminder-options {
     display: flex;
     justify-content: space-around;
 }
 
-.modal-send-reminder .modal-content {
+#modal-send-reminder #modal-content {
     width: 80%;
     max-width: 600px;
 }
 
 /* Add more information in the modal */
-.modal-send-reminder .client-details {
+#modal-send-reminder #client-details {
     margin-bottom: 20px;
 }
 
 /* Style the reminder options buttons */
-.reminder-options {
+#reminder-options {
     display: flex;
     justify-content: center;
     margin-top: 20px;
 }
 
-.reminder-option {
+#reminder-option {
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
@@ -438,14 +438,14 @@ body {
     gap: 10px;
 }
 
-.reminder-options {
+#reminder-options {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
     margin-bottom: 20px;
 }
 
-.reminder-option {
+#reminder-option {
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
@@ -459,7 +459,7 @@ body {
     align-items: center;
 }
 
-.client-list .due-date {
+#client-list #due-date {
     font-size: 14px;
     color: #ffffff;
     margin-left: 10px;
@@ -469,33 +469,33 @@ body {
     background-color: red;
 }
 
-.reminder-option.orange {
+#reminder-option#orange {
     background-color: orange;
 }
 
-.reminder-option.blue {
+#reminder-option#blue {
     background-color: blue;
 }
 
-.reminder-option.green {
+#reminder-option#green {
     background-color: green;
 }
 
-.message-options {
+#message-options {
     display: flex;
     align-items: center;
     gap: 10px;
 }
 
-.message-options label {
+#message-options label {
     margin-bottom: 0;
 }
 
-.message-options input[type="radio"] {
+#message-options input[type="radio"] {
     margin-right: 5px;
 }
 
-.message-options textarea {
+#message-options textarea {
     width: 100%;
     resize: none;
     border: 1px solid #ccc;
@@ -504,33 +504,33 @@ body {
     display: none;
 }
 
-.message-options input[type="radio"]:checked~#customMessageInput {
+#message-options input[type="radio"]:checked~#customMessageInput {
     display: block;
 }
 
 /* Laranja (orange) button */
-.reminder-option.orange {
+#reminder-option#orange {
     background-color: #f36e27;
     color: #fff;
 }
 
 /* Azul (blue) button */
-.reminder-option.blue {
+#reminder-option#blue {
     background-color: #007bff;
     color: #fff;
 }
 
 
 /* Azul (green) button */
-.reminder-option.green {
+#reminder-option#green {
     background-color: rgb(9, 183, 9);
     color: #fff;
 }
 
-/* Resto do estilo... */
+/* Resto do estilo### */
 
 /* Estilo do modal de configurações do lembrete automático */
-.modal-reminder-settings {
+#modal-reminder-settings {
     display: none;
     position: fixed;
     top: 0;
@@ -541,7 +541,7 @@ body {
     z-index: 999;
 }
 
-.modal-content {
+#modal-content {
     background-color: #fff;
     border-radius: 8px;
     padding: 20px;
@@ -552,29 +552,29 @@ body {
     transform: translate(-50%, -50%);
 }
 
-.modal-content h2 {
+#modal-content h2 {
     margin-top: 0;
     margin-bottom: 20px;
 }
 
-.modal-content p {
+#modal-content p {
     margin-bottom: 16px;
 }
 
-.modal-content label {
+#modal-content label {
     display: block;
     margin-bottom: 8px;
     font-weight: bold;
 }
 
-.modal-content input[type="number"] {
+#modal-content input[type="number"] {
     width: 100%;
     padding: 8px;
     border: 1px solid #ccc;
     border-radius: 4px;
 }
 
-.modal-content button {
+#modal-content button {
     padding: 8px 16px;
     background-color: #2f374b;
     color: #fff;
@@ -584,16 +584,16 @@ body {
     margin-right: 8px;
 }
 
-.modal-content button:last-child {
+#modal-content button:last-child {
     margin-right: 0;
 }
 
-.modal-content button:hover {
+#modal-content button:hover {
     background-color: #34495e;
 }
 
 /* Estilize o botão de lembrete automático como um checkbox personalizado */
-.reminder-toggle {
+#reminder-toggle {
     display: flex;
     gap: 5px;
     background-color: #e65100;
@@ -607,7 +607,7 @@ body {
     font-weight: bold;
 }
 
-.reminder-toggle .checkmark {
+#reminder-toggle #checkmark {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -621,12 +621,12 @@ body {
     margin-right: 8px;
 }
 
-.reminder-toggle input {
+#reminder-toggle input {
     opacity: 0;
     cursor: pointer;
 }
 
-.reminder-toggle .checkmark::before {
+#reminder-toggle #checkmark::before {
     content: "";
     position: absolute;
     display: none;
@@ -639,57 +639,57 @@ body {
     transform: rotate(45deg);
 }
 
-.reminder-toggle input:checked+.checkmark::before {
+#reminder-toggle input:checked+#checkmark::before {
     display: block;
 }
 
 /* Estilize o ícone de engrenagem */
-.gear-icon {
+#gear-icon {
     font-size: 25px;
     cursor: pointer;
     color: #ffffff;
 }
 
 
-/* Resto do estilo... */
+/* Resto do estilo### */
 
-.modal-content .reminder-settings {
+#modal-content #reminder-settings {
     margin-top: 20px;
 }
 
-.modal-content .reminder-settings h3 {
+#modal-content #reminder-settings h3 {
     margin-top: 0;
     margin-bottom: 16px;
 }
 
-.modal-content .reminder-settings label {
+#modal-content #reminder-settings label {
     display: flex;
     align-items: center;
     margin-bottom: 8px;
     font-weight: normal;
 }
 
-.modal-content .reminder-settings input[type="checkbox"] {
+#modal-content #reminder-settings input[type="checkbox"] {
     margin-right: 8px;
 }
 
-/* Resto do estilo... */
+/* Resto do estilo### */
 
-.modal-reminder-settings .modal-content {
+#modal-reminder-settings #modal-content {
     width: 400px;
     max-width: 90%;
     padding: 20px;
 }
 
-.modal-reminder-settings .modal-content h2 {
+#modal-reminder-settings #modal-content h2 {
     margin-top: 0;
 }
 
-.modal-reminder-settings .modal-content p {
+#modal-reminder-settings #modal-content p {
     margin-top: 0;
 }
 
-.modal-reminder-settings .modal-content input[type="number"] {
+#modal-reminder-settings #modal-content input[type="number"] {
     width: 100%;
     padding: 8px;
     margin-bottom: 16px;
@@ -698,45 +698,45 @@ body {
     box-sizing: border-box;
 }
 
-.modal-reminder-settings .divider {
+#modal-reminder-settings #divider {
     height: 1px;
     background-color: #ccc;
     margin: 16px 0;
 }
 
-.modal-reminder-settings .reminder-settings h3 {
+#modal-reminder-settings #reminder-settings h3 {
     margin-top: 0;
     margin-bottom: 16px;
 }
 
-.modal-reminder-settings .reminder-settings label {
+#modal-reminder-settings #reminder-settings label {
     display: flex;
     align-items: center;
     margin-bottom: 8px;
     font-weight: normal;
 }
 
-.modal-reminder-settings .reminder-settings input[type="checkbox"] {
+#modal-reminder-settings #reminder-settings input[type="checkbox"] {
     margin-right: 8px;
 }
 
-.modal-reminder-settings .modal-buttons {
+#modal-reminder-settings #modal-buttons {
     display: flex;
     justify-content: flex-end;
     margin-top: 16px;
 }
 
 /* Estilo para quando estiver perto do vencimento (7 dias ou menos) */
-.client-list li.close-to-due-date {
+#client-list li#close-to-due-date {
     background-color: red;
 }
 
 /* Estilo para quando estiver moderadamente perto do vencimento (entre 8 e 14 dias) */
-.client-list li.moderate-due-date {
+#client-list li#moderate-due-date {
     background-color: yellow;
 }
 
 /* Estilo para quando estiver longe do vencimento (mais de 14 dias) */
-.client-list li.far-from-due-date {
+#client-list li#far-from-due-date {
     background-color: green;
 }

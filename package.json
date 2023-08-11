@@ -17,10 +17,14 @@
     "@fullcalendar/interaction": "^6.1.8",
     "@fullcalendar/react": "^6.1.8",
     "fullcalendar": "^6.1.8",
+    "localforage": "^1.10.0",
+    "match-sorter": "^6.3.1",
     "moment-timezone": "^0.5.43",
     "react": "^18.2.0",
     "react-calendar": "^4.6.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.15.0",
+    "sort-by": "^1.2.0"
   },
   "devDependencies": {
     "@types/react": "^18.2.15",

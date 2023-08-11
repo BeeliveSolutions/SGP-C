@@ -44,9 +44,9 @@ const AddClientModal: React.FC<AddClientModalProps> = ({ onClose }) => {
     onClose();
   };
   return (
-    <div className="modal">
-      <div className="modal-content">
-        <span className="close" onClick={handleCloseModal}>
+    <div id="modal">
+      <div id="modal-content">
+        <span id="close" onClick={handleCloseModal}>
           &times;
         </span>
         <h2>Cadastro de Cliente</h2>
@@ -101,7 +101,7 @@ const AddClientModal: React.FC<AddClientModalProps> = ({ onClose }) => {
               required
             />
           </label>
-          <div className="form-buttons">
+          <div id="form-buttons">
             <button
               type="button"
               onClick={() =>

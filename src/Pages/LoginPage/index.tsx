@@ -1,22 +1,31 @@
 import React from "react";
 import logo from "../../assets/logo.png";
 import "./login.css";
+import { useNavigate } from "react-router-dom";
 
 const LoginPage: React.FC = () => {
+  const navigate = useNavigate();
   return (
-    <div className="container">
-      <div className="header">
+    <div id="container">
+      <div id="header">
         <h1>
           RJMICROCRÉDITO <br /> PESSOA-CLIENTE
         </h1>
-        <div className="logo-container">
+        <div id="logo-container">
           <img src={logo} alt="" />
         </div>
       </div>
-      <form className="login">
+      <form id="login">
         <input type="text" placeholder="Usuario" />
         <input type="password" placeholder="Senha" />
-        <button id="loginButton">Login</button>
+        <button
+          onClick={() => {
+            navigate("/Dashboard");
+          }}
+          id="loginButton"
+        >
+          Login
+        </button>
         <a href=""> Esqueceu a senha?</a>
       </form>
     </div>

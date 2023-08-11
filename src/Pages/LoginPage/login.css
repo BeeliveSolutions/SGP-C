@@ -1,11 +1,23 @@
-.container {
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primaryColor: #1b1b69;
+    --secondaryColor: #f56609;
+    font-family: 'PT Serif', serif;
+}
+
+#container {
     width: 100vw;
     height: 100vh;
     background-color: var(--secondaryColor);
     font-family: "Asap", sans-serif;
 }
 
-.header {
+#header {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -13,7 +25,7 @@
 
 }
 
-.logo-container>img {
+#logo-container>img {
     width: 290px;
     height: 250px;
 }
@@ -23,7 +35,7 @@ h1 {
     color: #fff;
 }
 
-.login {
+#login {
     overflow: hidden;
     background-color: white;
     padding: 40px 30px 30px 30px;
@@ -37,8 +49,8 @@ h1 {
     box-shadow: 5px 10px 10px var(--borderColor);
 }
 
-.login::before,
-.login::after {
+#login::before,
+#login::after {
     content: "";
     position: absolute;
     width: 600px;
@@ -50,21 +62,21 @@ h1 {
     z-index: -1;
 }
 
-.login::before {
+#login::before {
     left: 40%;
     bottom: -130%;
     background-color: var(--secondaryColor);
     animation: waves 6s infinite linear;
 }
 
-.login::after {
+#login::after {
     left: 35%;
     bottom: -125%;
     background-color: var(--primaryColor);
     animation: waves 7s infinite;
 }
 
-.login>input {
+#login>input {
     font-family: "Asap", sans-serif;
     display: block;
     border-radius: 5px;
@@ -76,7 +88,7 @@ h1 {
     margin: 15px -10px;
 }
 
-.login>button {
+#login>button {
     font-family: "Asap", sans-serif;
     cursor: pointer;
     color: #fff;
@@ -92,7 +104,7 @@ h1 {
     transition: background-color 300ms;
 }
 
-.login>button:hover {
+#login>button:hover {
     background-color: var(--secondaryColor);
 }
 
