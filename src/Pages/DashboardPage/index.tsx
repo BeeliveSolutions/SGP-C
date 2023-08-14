@@ -1,54 +1,66 @@
 import React from "react";
-
 import FullCalendar from "@fullcalendar/react";
 import dayGridPlugin from "@fullcalendar/daygrid";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
-import "./dashboard.css";
 import brLocale from "@fullcalendar/core/locales/pt-br";
 import interactionPlugin from "@fullcalendar/interaction";
 import TooBar from "../../components/TooBar";
+import {
+  Wrapper,
+  Content,
+  Header,
+  CardWrapper,
+  Card,
+  Search,
+  InputIconCenter,
+  ClientCard,
+  ClientList,
+  ClientItem,
+  ClientDetailsButton,
+  SearchIcon,
+  BoxLine,
+  ApprovedIcon,
+  NotApprovedIcon,
+  ClientName,
+  FullCalendarWrapper,
+} from "./dashboardStyle";
 
 const DashboardPage: React.FC = () => {
   return (
-    <div id="wrapper">
+    <Wrapper>
       <TooBar />
-      <div id="content">
-        <div id="header">
+      <Content>
+        <Header>
           <h1>SISTEMA GERENCIADOR PESSOA-CLIENTE</h1>
-        </div>
-        <div id="card-wrapper">
-          <div id="card">
+        </Header>
+        <CardWrapper>
+          <Card>
             <h2>Total de Clientes</h2>
             <span>2500.</span>
-          </div>
-          <div id="card">
+          </Card>
+          <Card>
             <h2>Total de Clientes Não Aprovados</h2>
             <span>500.</span>
-          </div>
-          <div id="card">
+          </Card>
+          <Card>
             <h2>Total de Clientes Aprovados</h2>
             <span>2000</span>
-          </div>
-
-          {/* New card for pré-cadastros */}
-          <div id="card">
+          </Card>
+          <Card>
             <h2>Total de Pré-cadastros</h2>
             <span>50</span>
-          </div>
-          <div id="search">
+          </Card>
+          <Search>
             <label htmlFor="searchInput">Pesquisar Cliente</label>
-            <div id="input-icon-center">
+            <InputIconCenter>
               <input type="text" id="searchInput" name="searchInput" />
-              <span id="search-icon">
-                <FontAwesomeIcon icon={faSearch} />
-              </span>
-            </div>
-          </div>
-          <div id="box-line">
+              <SearchIcon icon={faSearch} id="search-icon" />
+            </InputIconCenter>
+          </Search>
+        </CardWrapper>
+        <BoxLine>
+          <FullCalendarWrapper>
             <FullCalendar
-              height={"700px"}
               plugins={[dayGridPlugin, interactionPlugin]}
               locale={brLocale}
               selectable={true}
@@ -57,66 +69,25 @@ const DashboardPage: React.FC = () => {
               }}
               eventBackgroundColor="#54354"
             />
-
-            <div id="card clients">
-              <h2>Últimos Clientes Cadastrados</h2>
-              <ul id="client-list">
-                <li>
-                  <span id="approved"></span>
-                  <p>Elsebio de azevedo</p>
-                  <button id="client-details-btn">Detalhes</button>
-                </li>
-                <li>
-                  <span id="not-approved"></span>
-                  <p>Carlos Fernandes</p>
-                  <button id="client-details-btn">Detalhes</button>
-                </li>
-                <li>
-                  <span id="approved"></span>
-                  <p>Andre silva Matos</p>
-                  <button id="client-details-btn">Detalhes</button>
-                </li>
-                <li>
-                  <span id="not-approved"></span>
-                  <p>Thiago goncalvez dias G</p>
-                  <button id="client-details-btn">Detalhes</button>
-                </li>
-                <li>
-                  <span id="approved"></span>
-                  <p>Miriam Cardoso machado</p>
-                  <button id="client-details-btn">Detalhes</button>
-                </li>
-                <li>
-                  <span id="approved"></span>
-                  <p>Miriam Cardoso machado</p>
-                  <button id="client-details-btn">Detalhes</button>
-                </li>
-                <li>
-                  <span id="not-approved"></span>
-                  <p>Miriam Cardoso machado</p>
-                  <button id="client-details-btn">Detalhes</button>
-                </li>
-                <li>
-                  <span id="not-approved"></span>
-                  <p>Miriam Cardoso machado</p>
-                  <button id="client-details-btn">Detalhes</button>
-                </li>
-                <li>
-                  <span id="approved"></span>
-                  <p>Miriam Cardoso machado</p>
-                  <button id="client-details-btn">Detalhes</button>
-                </li>
-                <li>
-                  <span id="not-approved"></span>
-                  <p>Miriam Cardoso machado</p>
-                  <button id="client-details-btn">Detalhes</button>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+          </FullCalendarWrapper>
+          <ClientCard>
+            <h2>Últimos Clientes Cadastrados</h2>
+            <ClientList>
+              <ClientItem>
+                <ApprovedIcon />
+                <ClientName>Elsebio de azevedo</ClientName>
+                <ClientDetailsButton>Detalhes</ClientDetailsButton>
+              </ClientItem>
+              <ClientItem>
+                <NotApprovedIcon />
+                <ClientName>Carlos Fernandes</ClientName>
+                <ClientDetailsButton>Detalhes</ClientDetailsButton>
+              </ClientItem>
+            </ClientList>
+          </ClientCard>
+        </BoxLine>
+      </Content>
+    </Wrapper>
   );
 };
 

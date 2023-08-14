@@ -104,15 +104,16 @@ const AddClientModal: React.FC<AddClientModalProps> = ({ onClose }) => {
           <div id="form-buttons">
             <button
               type="button"
-              onClick={() =>
+              onClick={() => {
                 setFormData({
                   nome: "",
                   email: "",
                   telefone: "",
                   cpf: "",
                   dataNascimento: "",
-                })
-              }
+                }),
+                  handleCloseModal();
+              }}
             >
               Fechar
             </button>

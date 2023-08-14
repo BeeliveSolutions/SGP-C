@@ -2,27 +2,45 @@ import React from "react";
 import logo from "../../assets/logo.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChartBar, faUsers } from "@fortawesome/free-solid-svg-icons";
-import "./toobar.css";
+import {
+  Sidebar,
+  Logo,
+  LogoImage,
+  Menu,
+  MenuItem,
+  MenuItemLink,
+} from "./TooBarStyles";
+import { useNavigate } from "react-router-dom";
+
 const TooBar: React.FC = () => {
+  const navigate = useNavigate();
   return (
-    <nav id="sidebar">
-      <div id="logo">
-        <img src={logo} alt="Logo da Empresa" />
-      </div>
+    <Sidebar>
+      <Logo>
+        <LogoImage src={logo} alt="Logo da Empresa" />
+      </Logo>
       <h2>RJMICROCRÉDITO</h2>
-      <ul id="menu">
-        <li id="menu-item">
-          <a href="">
+      <Menu>
+        <MenuItem>
+          <MenuItemLink
+            onClick={() => {
+              navigate("/Dashboard");
+            }}
+          >
             <FontAwesomeIcon icon={faChartBar} /> Dashboard
-          </a>
-        </li>
-        <li id="menu-item">
-          <a href="./Clientes/clientes.html">
+          </MenuItemLink>
+        </MenuItem>
+        <MenuItem>
+          <MenuItemLink
+            onClick={() => {
+              navigate("/Clients");
+            }}
+          >
             <FontAwesomeIcon icon={faUsers} /> Clientes
-          </a>
-        </li>
-      </ul>
-    </nav>
+          </MenuItemLink>
+        </MenuItem>
+      </Menu>
+    </Sidebar>
   );
 };
 

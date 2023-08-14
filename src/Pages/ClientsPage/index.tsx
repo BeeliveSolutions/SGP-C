@@ -2,14 +2,19 @@ import React, { useState } from "react";
 import "./clients.css";
 import TooBar from "../../components/TooBar";
 import AddClientModal from "../../components/AddClient";
+import ClientDetailsModal from "../../components/ClientDetails";
 
 const ClientesPage: React.FC = () => {
   const [showModal, setShowModal] = useState(false);
+  const [showModalClientDetails, setShowModalClientDetails] = useState(false);
 
   const handleCloseModal = () => {
     setShowModal(false);
   };
 
+  const handleCloseModalDetailsClient = () => {
+    setShowModalClientDetails(false);
+  };
   return (
     <div id="wrapper">
       <div id="modal-change-status">
@@ -84,6 +89,11 @@ const ClientesPage: React.FC = () => {
 
       {showModal && <AddClientModal onClose={handleCloseModal} />}
       <TooBar />
+
+      {showModalClientDetails && (
+        <ClientDetailsModal onClose={handleCloseModalDetailsClient} />
+      )}
+      <TooBar />
       <div id="content">
         <div id="header">
           <div id="search">
@@ -154,12 +164,26 @@ const ClientesPage: React.FC = () => {
             <div id="client-info">
               <span id="status approved"></span>
               <span id="client-name">José da Silva Pereira</span>
-              <span id="due-date">Vencimento: 20/08/2023</span>
+              <span
+                onClick={() => {
+                  setShowModalClientDetails(true);
+                }}
+                id="due-date"
+              >
+                Vencimento: 20/08/2023
+              </span>
             </div>
             <div id="client-actions">
               <button id="send-reminder-btn">Enviar Lembrete</button>
               <button id="change-status-btn">Mudar Status</button>
-              <button id="view-details-btn">Ver Detalhes</button>
+              <button
+                onClick={() => {
+                  setShowModalClientDetails(true);
+                }}
+                id="view-details-btn"
+              >
+                Ver Detalhes
+              </button>
             </div>
           </li>
           {/* ... (outros clientes) ... */}

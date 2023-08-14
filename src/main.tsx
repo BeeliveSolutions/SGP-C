@@ -3,6 +3,8 @@ import * as ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import LoginPage from "./Pages/LoginPage";
 import DashboardPage from "./Pages/DashboardPage";
+import "./main.css";
+import ClientesPage from "./Pages/ClientsPage";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -11,6 +13,10 @@ const router = createBrowserRouter([
   {
     path: "/Dashboard",
     element: <DashboardPage />,
+  },
+  {
+    path: "/Clients",
+    element: <ClientesPage />,
   },
 ]);
 
