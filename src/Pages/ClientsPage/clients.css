@@ -216,8 +216,7 @@ body {
     color: var(--primaryColor);
 }
 
-/* Modal */
-
+ 
 
  
 
@@ -260,74 +259,6 @@ body {
 
 /* Styling for the new modal */
 /* Estilo do Modal */
-#modal-change-status {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 9999;
-    /* Certifique-se de que o modal esteja acima de outros elementos */
-}
-
-#modal-change-status #modal-content {
-    background-color: #f8f8f8;
-    padding: 30px;
-    border-radius: 10px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    /* Adiciona sombra ao modal */
-    max-width: 400px;
-    /* Limita a largura máxima do modal */
-    width: 80%;
-    /* Define a largura do modal */
-}
-
-#modal-change-status #close {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    font-size: 20px;
-    cursor: pointer;
-    color: #999;
-    /* Define a cor do ícone de fechar */
-}
-
-#modal-change-status h2 {
-    margin-top: 0;
-    margin-bottom: 20px;
-}
-
-#status-options {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 20px;
-}
-
-
-
-#loan-value-input {
-    margin-top: 10px;
-}
-
-#loan-value-input label {
-    display: block;
-    margin-bottom: 5px;
-    font-size: 14px;
-}
-
-#loan-value-input input {
-    width: 100%;
-    padding: 8px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    font-size: 16px;
-}
 
 
 /* ### (código anterior) ### */

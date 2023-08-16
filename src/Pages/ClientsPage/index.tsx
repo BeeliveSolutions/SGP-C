@@ -3,10 +3,14 @@ import "./clients.css";
 import TooBar from "../../components/TooBar";
 import AddClientModal from "../../components/AddClient";
 import ClientDetailsModal from "../../components/ClientDetails";
+import ChangeStatusModal from "../../components/ChangeStatus";
+import ModalSendReminder from "../../components/SendReminderModal";
 
 const ClientesPage: React.FC = () => {
   const [showModal, setShowModal] = useState(false);
   const [showModalClientDetails, setShowModalClientDetails] = useState(false);
+  const [showModalChangeStatus, setShowModalChangeStatus] = useState(false);
+  const [showModalSendReminder, setShowModalSendReminder] = useState(false);
 
   const handleCloseModal = () => {
     setShowModal(false);
@@ -15,57 +19,16 @@ const ClientesPage: React.FC = () => {
   const handleCloseModalDetailsClient = () => {
     setShowModalClientDetails(false);
   };
+
+  const handleCloseModalChangeStatus = () => {
+    setShowModalChangeStatus(false);
+  };
+
+  const handleCloseModalSendReminder = () => {
+    setShowModalSendReminder(false);
+  };
   return (
     <div id="wrapper">
-      <div id="modal-change-status">
-        <div id="modal-content">
-          <span id="close">&times;</span>
-          <h2>Mudar Status</h2>
-          <div id="status-options">
-            <button id="status-option">Aprovado</button>
-            <button id="status-option">Não Aprovado</button>
-          </div>
-          <div id="loan-value-input">
-            <label htmlFor="loanValue">Valor do Empréstimo:</label>
-            <input
-              type="text"
-              id="loanValue"
-              placeholder="Digite o valor do empréstimo..."
-            />
-          </div>
-        </div>
-      </div>
-
-      <div id="modal-send-reminder">
-        <div id="modal-content">
-          <span id="close">&times;</span>
-          <h2>Enviar Lembrete</h2>
-          <div id="reminder-options">
-            <button id="reminder-option orange">
-              <i id="fas fa-envelope"></i> Email
-            </button>
-            <button id="reminder-option blue">
-              <i id="fas fa-comment-alt"></i> SMS
-            </button>
-            <button id="reminder-option green">
-              <i id="fab fa-whatsapp"></i> WhatsApp
-            </button>
-          </div>
-          <div id="message-options">
-            <input type="checkbox" id="customMessageCheckbox" />
-            <label htmlFor="customMessageCheckbox">
-              Mensagem Personalizada
-            </label>
-            <textarea
-              id="customMessageInput"
-              placeholder="Digite sua mensagem..."
-              rows={4}
-              style={{ display: "none" }}
-            ></textarea>
-          </div>
-        </div>
-      </div>
-
       <div id="modal-reminder-settings">
         <div id="modal-content">
           <span id="close">&times;</span>
@@ -92,6 +55,13 @@ const ClientesPage: React.FC = () => {
 
       {showModalClientDetails && (
         <ClientDetailsModal onClose={handleCloseModalDetailsClient} />
+      )}
+
+      {showModalChangeStatus && (
+        <ChangeStatusModal onClose={handleCloseModalChangeStatus} />
+      )}
+      {showModalSendReminder && (
+        <ModalSendReminder onClose={handleCloseModalSendReminder} />
       )}
       <TooBar />
       <div id="content">
@@ -174,8 +144,22 @@ const ClientesPage: React.FC = () => {
               </span>
             </div>
             <div id="client-actions">
-              <button id="send-reminder-btn">Enviar Lembrete</button>
-              <button id="change-status-btn">Mudar Status</button>
+              <button
+                onClick={() => {
+                  setShowModalSendReminder(true);
+                }}
+                id="send-reminder-btn"
+              >
+                Enviar Lembrete
+              </button>
+              <button
+                onClick={() => {
+                  setShowModalChangeStatus(true);
+                }}
+                id="change-status-btn"
+              >
+                Mudar Status
+              </button>
               <button
                 onClick={() => {
                   setShowModalClientDetails(true);
@@ -186,7 +170,6 @@ const ClientesPage: React.FC = () => {
               </button>
             </div>
           </li>
-          {/* ... (outros clientes) ... */}
         </ul>
       </div>
     </div>

@@ -12,16 +12,16 @@
 }
 
 #modal-content {
-    width: 400px;
+    width: 500px;
     background-color: #fff;
     padding: 30px;
-    border-radius: 8px;
+    border-radius: 12px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 #modal-content h2 {
     color: var(--secondaryColor);
-    font-size: 24px;
+    font-size: 28px;
     margin-bottom: 20px;
     text-transform: uppercase;
 }
@@ -35,6 +35,7 @@
 #modal-content label {
     color: var(--secondaryColor);
     font-weight: bold;
+    font-size: 18px;
 }
 
 #modal-content input[type="text"],
@@ -42,9 +43,9 @@
 #modal-content input[type="tel"],
 #modal-content input[type="number"],
 #modal-content input[type="date"] {
-    padding: 10px;
+    padding: 12px;
     border: 2px solid var(--secondaryColor);
-    border-radius: 5px;
+    border-radius: 6px;
     font-size: 16px;
 }
 
@@ -52,13 +53,13 @@
     display: flex;
     justify-content: flex-start;
     gap: 10px;
-    margin-top: 20px;
+    margin-top: 30px;
 }
 
 #form-buttons button {
-    padding: 10px 20px;
+    padding: 12px 24px;
     border: none;
-    border-radius: 5px;
+    border-radius: 6px;
     cursor: pointer;
     font-size: 16px;
     transition: background-color 0.3s, color 0.3s;
@@ -90,6 +91,7 @@
     position: absolute;
     top: 10px;
     right: 10px;
+    transition: color 0.3s;
 }
 
 #close:hover {
