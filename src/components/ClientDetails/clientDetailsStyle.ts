@@ -1,5 +1,8 @@
 import { styled } from "styled-components";
 
+const primaryColor = "#3498DB";
+const secondaryColor = "#001F3F";
+
 export const ModalWrapper = styled.div`
   position: fixed;
   top: 0;
@@ -29,7 +32,7 @@ export const CloseButton = styled.span`
   top: 25px;
   right: 25px;
   font-size: 24px;
-  color: #f56609;
+  color: ${primaryColor};
   cursor: pointer;
 `;
 
@@ -50,7 +53,7 @@ export const FinancialInfo = styled.div`
 export const SectionTitle = styled.h3`
   font-size: 20px;
   margin-bottom: 10px;
-  color: #1b1b69;
+  color: ${primaryColor};
 `;
 
 export const InfoLabel = styled.strong`
@@ -60,7 +63,7 @@ export const InfoLabel = styled.strong`
 export const InputField = styled.input`
   width: 100%;
   padding: 12px;
-  border: 2px solid #f56609;
+  border: 2px solid ${secondaryColor};
   border-radius: 6px;
   font-size: 16px;
   margin: 8px 0;
@@ -69,7 +72,7 @@ export const InputField = styled.input`
 export const SelectField = styled.select`
   width: 100%;
   padding: 12px;
-  border: 2px solid #f56609;
+  border: 2px solid ${secondaryColor};
   border-radius: 6px;
   font-size: 16px;
   margin: 8px 0;
@@ -89,8 +92,9 @@ export const EditButton = styled.div`
 
   button {
     padding: 12px 24px;
-    background-color: #f56609;
-    color: #fff;
+    background-color: ${(props) =>
+      props.backgroundColor || `${secondaryColor}`};
+    color: ${(props) => props.textColor || "#fff"};
     border: none;
     border-radius: 6px;
     cursor: pointer;
@@ -98,7 +102,8 @@ export const EditButton = styled.div`
     transition: background-color 0.3s;
 
     &:hover {
-      background-color: #d45c08;
+      background-color: ${(props) =>
+        props.hoverBackgroundColor || `${secondaryColor}`};
     }
   }
 `;

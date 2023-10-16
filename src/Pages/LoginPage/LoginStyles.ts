@@ -1,10 +1,7 @@
 import styled, { keyframes } from "styled-components";
+const primaryColor = "#3498DB";
+const secondaryColor = "#001F3F";
 
-/* Cores */
-const primaryColor = "#1b1b69";
-const secondaryColor = "#f56609";
-
-/* Animação de Ondas */
 const wavesAnimation = keyframes`
   from {
     transform: rotate(0);
@@ -15,7 +12,6 @@ const wavesAnimation = keyframes`
   }
 `;
 
-/* Styled Components */
 export const Container = styled.div`
   width: 100vw;
   height: 100vh;
@@ -33,12 +29,21 @@ export const LogoContainer = styled.div`
   img {
     width: 290px;
     height: 250px;
+
+    @media (max-width: 768px) {
+      width: 200px;
+      height: 170px;
+    }
   }
 `;
-
 export const Title = styled.h1`
   font-weight: bold;
   color: #fff;
+  font-size: 24px;
+
+  @media (max-width: 768px) {
+    font-size: 18px;
+  }
 `;
 
 export const LoginForm = styled.form`

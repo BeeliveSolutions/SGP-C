@@ -1,17 +1,23 @@
 import styled from "styled-components";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-const primaryColor = "#1b1b69";
-
-const secondaryColor = "#f56609";
-
+//const primaryColor = "#3498DB";
+const primaryColor = "#fa7dc3";
+const secondaryColor = "#001F3F";
 export const Wrapper = styled.div`
-  display: flex;
+  flex: 1;
 `;
 
 export const Content = styled.div`
   flex: 1;
-  margin-left: 270px;
+  margin-left: ${(props) => (props.active ? "50px" : "230px")};
+  transition: all 0.5s;
   padding: 20px;
+  height: 120vh;
+  color: ${primaryColor};
+  @media (max-width: 768px) {
+    width: 100vw;
+    height: 100vh;
+    margin-left: 50px;
+  }
 `;
 
 export const Header = styled.div`
@@ -21,18 +27,27 @@ export const Header = styled.div`
   margin-bottom: 20px;
 
   h1 {
-    color: ${secondaryColor};
-    font-size: 24px;
+    @media (max-width: 768px) {
+      font-size: 16px;
+    }
   }
 `;
 
 export const CardWrapper = styled.div`
   display: flex;
+
   flex-wrap: wrap;
   gap: 20px;
-  justify-content: flex-start;
+  justify-content: center;
   margin-bottom: 10px;
   align-items: center;
+
+  @media (max-width: 768px) {
+    width: 80vw;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 `;
 
 export const Card = styled.div`
@@ -45,6 +60,7 @@ export const Card = styled.div`
   transition: all 0.2s ease;
   justify-content: center;
   align-items: center;
+  color: ${secondaryColor};
 
   &:hover {
     background-color: ${secondaryColor};
@@ -57,17 +73,26 @@ export const Card = styled.div`
   }
 
   h2 {
-    color: ${secondaryColor};
+    color: ${primaryColor};
     font-size: 20px;
     font-weight: bold;
   }
 
   span {
-    color: #000000;
+    color: ${secondaryColor};
+
     margin-bottom: 15px;
     line-height: 1.6;
     font-size: 20px;
     font-weight: bold;
+  }
+
+  @media (max-width: 768px) {
+    justify-content: flex-start;
+    width: 250px;
+    align-items: center;
+    text-align: center;
+    height: 100px;
   }
 `;
 
@@ -89,7 +114,6 @@ export const Search = styled.div`
   }
 
   label {
-    color: ${secondaryColor};
     font-weight: bold;
   }
 
@@ -112,19 +136,17 @@ export const InputIconCenter = styled.div`
     position: absolute;
     top: 50%;
     right: 10px;
-    color: #ccc;
   }
 `;
 
 export const ClientCard = styled.div`
+  flex: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
-  flex: 1;
   padding: 20px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
   border-radius: 15px;
-
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 
   &:hover {
@@ -133,9 +155,11 @@ export const ClientCard = styled.div`
   }
 
   h2 {
-    color: ${secondaryColor};
     margin-bottom: 10px;
     font-size: 20px;
+  }
+  span {
+    color: red;
   }
 `;
 
@@ -170,41 +194,48 @@ export const ClientDetailsButton = styled.button`
   }
 `;
 
-export const SearchIcon = styled(FontAwesomeIcon)`
-  /* Se você precisar adicionar estilos específicos ao ícone, faça isso aqui */
-`;
 export const BoxLine = styled.div`
   display: flex;
   justify-content: space-between;
   width: 100%;
   margin-top: 20px;
   gap: 25px;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    width: 80vw;
+  }
 `;
 export const FullCalendarWrapper = styled.div`
   flex: 2.35;
   height: 700px;
-
+  z-index: 0;
   .fc {
+    z-index: -1;
     border-radius: 15px;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
     padding: 20px;
-
     button {
       background-color: ${secondaryColor};
+      z-index: 0;
 
       &:hover {
         background-color: ${primaryColor};
       }
     }
   }
+
+  @media (max-width: 768px) {
+    font-size: 12px;
+  }
 `;
 
-export const ApprovedIcon = styled.span`
+export const IconStatus = styled.span`
   width: 10px;
   height: 10px;
   border-radius: 50%;
   margin-right: 10px;
-  background-color: green;
+  background-color: ${(props) => props.color || "green"};
 `;
 
 export const NotApprovedIcon = styled.span`
@@ -215,10 +246,29 @@ export const NotApprovedIcon = styled.span`
   background-color: red;
 `;
 
+export const preCadIcon = styled.span`
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-right: 10px;
+  background-color: yellow;
+`;
+
+export const preAprovedIcon = styled.span`
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-right: 10px;
+  background-color: #5857;
+`;
+
 export const ClientName = styled.p`
-  color: #000000;
   margin-bottom: 0;
   line-height: 1.6;
   font-size: 20px;
   font-weight: bold;
+
+  @media (max-width: 768px) {
+    font-size: 16px;
+  }
 `;

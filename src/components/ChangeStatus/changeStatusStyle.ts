@@ -1,7 +1,7 @@
 import styled from "styled-components";
-
-const primaryColor = "#1b1b69";
-const secondaryColor = "#f56609";
+import DatePicker from "react-datepicker";
+const primaryColor = "#3498DB";
+const secondaryColor = "#001F3F";
 
 export const ModalChangeStatus = styled.div`
   display: flex;
@@ -46,11 +46,25 @@ export const StatusOptions = styled.div`
   display: flex;
   justify-content: space-between;
   margin-bottom: 20px;
+
+  @media (max-width: 768px) {
+    gap: 10px;
+    flex-direction: column;
+  }
 `;
-export const WrapperInput = styled.div``;
+export const WrapperInput = styled.div`
+  display: flex;
+  align-items: flex-start;
+
+  flex-direction: column;
+`;
 export const LoanValueInput = styled.div`
   display: flex;
   justify-content: space-between;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
 `;
 
 export const Label = styled.label`
@@ -69,12 +83,16 @@ export const StatusOption = styled.button`
   color: #fff;
   transition: all 0.3s ease-in-out;
 
-  background-color: ${(props) => props.color || primaryColor};
+  background-color: ${(props) => props.color || secondaryColor};
   transition: background-color 0.3s, transform 0.3s;
 
   &:hover {
-    background-color: orange;
+    background-color: ${primaryColor};
     transform: scale(1.05);
+  }
+
+  @media (max-width: 768px) {
+    padding: 5px 10px;
   }
 `;
 

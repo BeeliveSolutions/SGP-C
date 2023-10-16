@@ -1,5 +1,26 @@
 import React, { useState } from "react";
-import "./addclient.css";
+import {
+  CloseButton,
+  CloseIcon,
+  Form,
+  FormButtons,
+  Input,
+  Label,
+  ModalContent,
+  ModalTitle,
+  ModalWrapper,
+  SubmitButton,
+} from "./AddClientStyle";
+import api from "../../config/api";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import {
+  FiUser,
+  FiMail,
+  FiPhone,
+  FiCreditCard,
+  FiCalendar,
+} from "react-icons/fi"; // Importe os ícones aqui
 
 interface AddClientModalProps {
   onClose: () => void;
@@ -7,11 +28,11 @@ interface AddClientModalProps {
 
 const AddClientModal: React.FC<AddClientModalProps> = ({ onClose }) => {
   const [formData, setFormData] = useState({
-    nome: "",
+    name: "",
     email: "",
-    telefone: "",
+    phone: "",
     cpf: "",
-    dataNascimento: "",
+    birthDate: "",
   });
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -22,106 +43,142 @@ const AddClientModal: React.FC<AddClientModalProps> = ({ onClose }) => {
     }));
   };
 
-  const handleSubmit = (event: React.FormEvent) => {
+  const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
-    console.log(formData);
+    try {
+      const response = await api.post(
+        "clients",
+        {
+          ...formData,
+        },
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+
+      toast.success("Usuário criado com sucesso!");
+    } catch (error) {
+      if (error.response) {
+        toast.error("Algum erro aconteceu, contate o desenvolvedor!");
+      }
+    }
+
     setFormData({
-      nome: "",
+      name: "",
       email: "",
-      telefone: "",
+      phone: "",
       cpf: "",
-      dataNascimento: "",
+      birthDate: "",
     });
   };
+
   const handleCloseModal = () => {
     setFormData({
-      nome: "",
+      name: "",
       email: "",
-      telefone: "",
+      phone: "",
       cpf: "",
-      dataNascimento: "",
+      birthDate: "",
     });
     onClose();
   };
+
   return (
-    <div id="modal">
-      <div id="modal-content">
-        <span id="close" onClick={handleCloseModal}>
-          &times;
-        </span>
-        <h2>Cadastro de Cliente</h2>
-        <form onSubmit={handleSubmit}>
-          <label>
-            Nome:
-            <input
+    <ModalWrapper>
+      <ModalContent>
+        <CloseIcon onClick={handleCloseModal}>&times;</CloseIcon>
+        <ModalTitle>Cadastro de Cliente</ModalTitle>
+        <Form onSubmit={handleSubmit}>
+          <Label>
+            <label htmlFor="">
+              Nome: <FiUser />
+            </label>
+
+            <Input
               type="text"
-              name="nome"
-              value={formData.nome}
+              name="name"
+              value={formData.name}
               onChange={handleChange}
               required
             />
-          </label>
-          <label>
-            Email:
-            <input
+          </Label>
+          <Label>
+            <label htmlFor="">
+              Email: <FiMail />
+            </label>
+
+            <Input
               type="email"
               name="email"
               value={formData.email}
               onChange={handleChange}
               required
             />
-          </label>
-          <label>
-            Telefone:
-            <input
+          </Label>
+          <Label>
+            <label htmlFor="">
+              Telefone: <FiPhone />
+            </label>
+
+            <Input
               type="tel"
-              name="telefone"
-              value={formData.telefone}
+              name="phone"
+              value={formData.phone}
               onChange={handleChange}
               required
             />
-          </label>
-          <label>
-            CPF:
-            <input
+          </Label>
+          <Label>
+            <label htmlFor="">
+              CPF:
+              <FiCreditCard />
+            </label>
+
+            <Input
               type="text"
               name="cpf"
               value={formData.cpf}
               onChange={handleChange}
               required
             />
-          </label>
-          <label>
-            Data de Nascimento:
-            <input
+          </Label>
+          <Label>
+            <label htmlFor="">
+              Data de Nascimento <FiCalendar />:
+            </label>
+
+            <Input
               type="date"
-              name="dataNascimento"
-              value={formData.dataNascimento}
+              name="birthDate"
+              value={formData.birthDate}
               onChange={handleChange}
               required
             />
-          </label>
-          <div id="form-buttons">
-            <button
+          </Label>
+          <FormButtons>
+            <CloseButton
               type="button"
               onClick={() => {
                 setFormData({
-                  nome: "",
+                  name: "",
                   email: "",
-                  telefone: "",
+                  phone: "",
                   cpf: "",
-                  dataNascimento: "",
-                }),
-                  handleCloseModal();
+                  birthDate: "",
+                });
+                handleCloseModal();
               }}
             >
               Fechar
-            </button>
-            <button type="submit">Cadastrar</button>
-          </div>
-        </form>
-      </div>
-    </div>
+            </CloseButton>
+            <SubmitButton type="submit">Cadastrar</SubmitButton>
+          </FormButtons>
+        </Form>
+      </ModalContent>
+      <ToastContainer />
+    </ModalWrapper>
   );
 };
 
